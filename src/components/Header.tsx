@@ -8,6 +8,7 @@ import {
   Badge,
 } from "react-bootstrap";
 import { FaShoppingCart } from 'react-icons/fa'
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -15,7 +16,7 @@ const Header = () => {
     <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
       <Container>
         <Navbar.Brand>
-          <a>Shopping Cart</a>
+          <Link to='/'>Shopping Cart</Link>
         </Navbar.Brand>
         <Navbar.Text className="search">
           <FormControl
