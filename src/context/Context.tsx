@@ -1,18 +1,22 @@
 import { createContext, useReducer, useContext } from "react"
 import { faker } from '@faker-js/faker';
 import { cartReducer } from "./Reducers";
-import { ContextType, Products } from "../model";
-
-const Cart = createContext< ContextType | null>(null);
+import { ContextType, ProductType, State } from "../model";
 
 interface Props {
-  children: JSX.Element;
+  children: React.ReactNode;
 }
 
+const initialState: State = {
+  products: [],
+  cart: []
+} 
 
-const Context = ({ children }: Props ) => {
+const Cart = createContext<ContextType>({state: initialState, dispatch: () => null});
 
-  const products: Products[] = [...Array(20)].map(() => ({
+const Context: React.FC<Props> = ({ children }) => {
+
+  const products: ProductType[] = [...Array(20)].map(() => ({
     id: faker.string.uuid(),
     name: faker.commerce.productName(),
     price: faker.commerce.price(),
@@ -27,9 +31,11 @@ const Context = ({ children }: Props ) => {
     cart: []
   });
 
-  return < Cart.Provider value={{ state, dispatch }}>
-    {children}
-  </Cart.Provider>
+  return (
+    < Cart.Provider value={{ state, dispatch }}>
+      {children}
+    </Cart.Provider>
+  )
 }
 
 export default Context;

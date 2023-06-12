@@ -3,7 +3,7 @@ export interface ContextType {
     dispatch: React.Dispatch<Actions>
 }
 
-export interface Products {
+export interface ProductType {
     id: string,
     name: string,
     price: string,
@@ -15,7 +15,7 @@ export interface Products {
 }
 
 export interface State {
-    products: Products[],
+    products: ProductType[],
     cart: []
 }
   
