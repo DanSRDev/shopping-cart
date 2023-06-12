@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Navbar,
   Container,
@@ -11,7 +10,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 import { Link } from "react-router-dom";
 
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
       <Container>

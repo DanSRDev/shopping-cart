@@ -1,13 +1,20 @@
-import React from 'react'
 import { CartState } from '../context/Context'
+import SingleProduct from './SingleProduct';
+import './styles.css'
 
-const Home = () => {
-
-  const { state } = CartState();
-  console.log(state);
+const Home: React.FC = () => {
+  const { state:{ products } } = CartState();
+  console.log(products);
   return (
-    <div>
-        Home
+    <div className='home'>
+      {/* <Filters /> */}
+      <div className="productContainer">
+        {
+          products.map((prod) => {
+            return <SingleProduct prod={prod} key={prod.id} />
+          })
+        }
+      </div>
     </div>
   )
 }
