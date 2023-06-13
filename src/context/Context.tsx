@@ -14,6 +14,8 @@ const initialState: State = {
 
 const Cart = createContext<ContextType>({state: initialState, dispatch: () => null});
 
+faker.seed(99); //Para que faker genere los mismos datos
+
 const Context: React.FC<Props> = ({ children }) => {
 
   const products: ProductType[] = [...Array(20)].map(() => ({
@@ -21,7 +23,7 @@ const Context: React.FC<Props> = ({ children }) => {
     name: faker.commerce.productName(),
     price: faker.commerce.price(),
     image: faker.image.url(),
-    instock: faker.helpers.arrayElement([0,3,5,6,7]),
+    inStock: faker.helpers.arrayElement([0,3,5,6,7]),
     fastDelivery: faker.datatype.boolean(),
     ratings: faker.helpers.arrayElement([1,2,3,4,5])
   }))

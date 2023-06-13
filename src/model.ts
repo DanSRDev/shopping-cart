@@ -8,7 +8,7 @@ export interface ProductType {
     name: string,
     price: string,
     image: string,
-    instock: number,
+    inStock: number,
     fastDelivery: boolean,
     ratings: number
 
