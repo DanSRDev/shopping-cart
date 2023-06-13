@@ -11,15 +11,13 @@ export interface ProductType {
     inStock: number,
     fastDelivery: boolean,
     ratings: number
-
 }
 
 export interface State {
     products: ProductType[],
-    cart: []
+    cart: ProductType[]
 }
   
-export interface Actions {
-    type: 'x' ; 
-    payload: string;
-}
+export type Actions =
+    | { type: 'ADD_TO_CART' ; payload: ProductType }
+    | { type: 'REMOVE_FROM_CART' ; payload: ProductType }
