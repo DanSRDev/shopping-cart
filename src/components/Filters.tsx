@@ -70,7 +70,7 @@ const Filters: React.FC = () => {
               type: "FILTER_BY_DELIVERY",
             })
           }
-          checked={byStock}
+          checked={byFastDelivery}
         />
       </span>
       <span>
