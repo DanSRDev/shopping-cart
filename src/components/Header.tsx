@@ -49,7 +49,7 @@ const Header: React.FC = () => {
               {cart.length > 0 ? (
                 <>
                   {cart.map((prod) => (
-                    <span className="cartItem">
+                    <span className="cartItem" key={prod.id}>
                       <img
                         src={prod.image}
                         className="cartItemImg"
